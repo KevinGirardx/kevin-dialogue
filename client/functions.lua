@@ -21,6 +21,10 @@ function DestroyCamera()
 end
 
 function SendDialogue(data)
+    if data.entity == nil then print('No entity specified for dialogue') return end
+    if data.type == nil then data.type = 'client' end
+    if data.pedName == nil then print('No pedName specified for dialogue') data.pedName = 'unknown' end
+    if data.job == nil then print('No job specified for dialogue') data.job = 'unknown' end
     DoCameraPan(data)
     SetNuiFocus(true, true)
     SendNUIMessage({
