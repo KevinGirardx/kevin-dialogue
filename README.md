@@ -51,7 +51,6 @@
             {
                 icon = 'fas fa-store',
                 label = 'open shop',
-                actionType = 'server'
                 event = 'kevin-scripts:openshop',
                 type = 'client',
                 shouldClose = true,
