@@ -23,6 +23,10 @@
                 } else {
                     NUI.methods.NUICallback('fireeventtrigger', { event: button.event, type: button.type });
                 }
+
+                if (button.shouldClose) {
+                    this.HideDialogue();
+                }
             },
             UpdateButons: function(buttons) {
                 if (this.data.buttons.length > 0) {
