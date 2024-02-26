@@ -1,5 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-
 local Camera = nil
 
 --- NUI Callbacks
