@@ -1,3 +1,5 @@
+# Not completely finshed will update as i go, feel free to pr
+
 ![image](https://github.com/KevinGirardx/kevin-dialogue/assets/89563654/f2e32564-7d4f-4e25-a32e-ddc3bd726ba1)
 
 # Exports
