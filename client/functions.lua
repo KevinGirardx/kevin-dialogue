@@ -41,6 +41,7 @@ function DestroyCamera()
     DestroyAllCams(true)
 
     SetNuiFocus(false, false)
+    Camera = nil
 end
 
 function SendDialogue(entity, data)
