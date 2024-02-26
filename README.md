@@ -20,7 +20,7 @@
         * @param {string} options.buttons.type - The type of button (client or server).
         * @param {boolean} options.buttons.shouldClose - Whether the dialogue should close after the button is clicked.
     */
-    exports['kevin-dialogue'].SendDialogue(data)
+    exports['kevin-dialogue']:SendDialogue(data)
 
     /**
         * Updates the buttons for the Kevin Dialogue.
@@ -33,15 +33,15 @@
         * @param {string} options.buttons.type - The type of the button (e.g., 'server', 'client').
         * @param {boolean} options.buttons.shouldClose - Whether the dialogue should close after the button is clicked.
      */
-    exports['kevin-dialogue'].UpdateButtons(data)
+    exports['kevin-dialogue']:UpdateButtons(data)
 
-    exports['kevin-dialogue'].CloseDialogue()
+    exports['kevin-dialogue']:CloseDialogue()
 ```
 
 
 # Example Useage:
 ```lua
-    exports['kevin-dialogue'].SendDialogue(entity, {
+    exports['kevin-dialogue']:SendDialogue(entity, {
         pedName = 'kevin',
         dialogueName = 'script creator',
         reputation = '250',
@@ -59,7 +59,7 @@
 ```
 
 ```lua
-    exports['kevin-dialogue'].UpdateButtons({
+    exports['kevin-dialogue']:UpdateButtons({
         buttons = {
             {
                 icon = 'fas fa-store',
@@ -75,6 +75,6 @@
 ```lua
     RegisterNetEvent('kevin-scripts:closeshop', function()
         print('closed shop successfully')
-        exports['kevin-dialogue'].CloseDialogue()
+        exports['kevin-dialogue']:CloseDialogue()
     end)
 ```
