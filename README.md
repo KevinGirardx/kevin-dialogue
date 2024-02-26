@@ -1,14 +1,74 @@
-**Built With**
-* [![Vue][Vue.js]][Vue-url]
+# Exports
+```lua
+    /**
+     * Sends a dialogue to an entity using the Kevin Dialogue system.
+     *
+     * @param {number} entity - The entity to send the dialogue to.
+     * @param {object} options - The options for the dialogue.
+     * @param {string} options.pedName - (OPTIONAL BUT DEFAULTS TO UNKNOWN IF NOT SPECIFIED) The name of the ped speaking the dialogue.
+     * @param {string} options.dialogueName - (OPTIONAL) The name of the dialogue.
+     * @param {string} options.reputation - (OPTIONAL) The reputation required to trigger the dialogue.
+     * @param {string} options.dialogue - The dialogue text.
+     * @param {Array<object>} options.buttons - The buttons to display with the dialogue.
+     * @param {string} options.buttons.icon - (OPTIONAL BUT DEFAULTS TO CIRCLE ICON IF NOT SPECIFIED) The icon for the button.
+     * @param {string} options.buttons.label - The label for the button.
+     * @param {string} options.buttons.actionType - The type of action the button performs.
+     * @param {string} options.buttons.event - The event triggered by the button.
+     * @param {string} options.buttons.type - The type of button (client or server).
+     */
+    exports['kevin-dialogue'].SendDialogue(data)
+
+    /**
+     * Updates the buttons for the Kevin Dialogue.
+     *
+     * @param {Object} options - The options for updating the buttons.
+     * @param {Array} options.buttons - The array of buttons to update.
+     * @param {string} options.buttons.icon - The icon for the button.
+     * @param {string} options.buttons.label - The label for the button.
+     * @param {string} options.buttons.event - The event triggered when the button is clicked.
+     * @param {string} options.buttons.type - The type of the button (e.g., 'server', 'client').
+     */
+    exports['kevin-dialogue'].UpdateButtons(data)
+
+    exports['kevin-dialogue'].CloseDialogue()
+```
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+# Example Useage:
+```lua
+    exports['kevin-dialogue'].SendDialogue(entity, {
+        pedName = 'kevin',
+        dialogueName = 'script creator',
+        reputation = '250',
+        dialogue = 'hello, how can i help you today?',
+        buttons = {
+            {
+                icon = 'fas fa-store',
+                label = 'open shop',
+                actionType = 'server'
+                event = 'kevin-scripts:openshop',
+                type = 'client',
+            },
+        },
+    })
+```
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+```lua
+    exports['kevin-dialogue'].UpdateButtons({
+        buttons = {
+            {
+                icon = 'fas fa-store',
+                label = 'close shop',
+                event = 'kevin-scripts:closeshop',
+                type = 'client',
+            },
+        },
+    })
+```
 
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-
-
-![image](https://github.com/KevinGirardx/kevin-dialogue/assets/89563654/f2e32564-7d4f-4e25-a32e-ddc3bd726ba1)
+```lua
+    RegisterNetEvent('kevin-scripts:closeshop', function()
+        print('closed shop successfully')
+        exports['kevin-dialogue'].CloseDialogue()
+    end)
+```
