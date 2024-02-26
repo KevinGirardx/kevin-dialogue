@@ -16,7 +16,6 @@
         * @param {Array<object>} options.buttons - The buttons to display with the dialogue.
         * @param {string} options.buttons.icon - (OPTIONAL BUT DEFAULTS TO CIRCLE ICON IF NOT SPECIFIED) The icon for the button.
         * @param {string} options.buttons.label - The label for the button.
-        * @param {string} options.buttons.actionType - The type of action the button performs.
         * @param {string} options.buttons.event - The event triggered by the button.
         * @param {string} options.buttons.type - The type of button (client or server).
         * @param {boolean} options.buttons.shouldClose - Whether the dialogue should close after the button is clicked.
